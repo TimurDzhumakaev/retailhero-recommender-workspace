@@ -32,7 +32,7 @@ if __name__ == "__main__":
 
     model = implicit.nearest_neighbours.CosineRecommender(K=1)
     model.fit(train_mat.T)
-    out_dir = "../tmp/implicit_cosine1/"
+    out_dir = cfg.BASE_DIR + "/tmp/implicit_cosine1/"
     os.makedirs(out_dir, exist_ok=True)
     print("Dump model to " + out_dir)
     pickle.dump(model, open(out_dir + "/model.pkl", "wb"))
